@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matchup Mixifier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .button-container {
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .image-container img {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="button-container">
+            <button onclick="randomMatchup()">Generate Random Matchup</button>
+        </div>
+        <div id="randomMatchup" style="margin-bottom: 20px;"></div>
+        <div class="image-container" id="imageGrid"></div>
+    </div>
+
+    <script>
+        let images = [
+            "Medusa.jpg", "Alice.jpg", "Arthur.jpg", "Sinbad.jpg",
+            "Dracula.jpg", "Sherlock.jpg", "Jekyll _ Hyde.jpg", "Invisible Man.jpg",
+            "Buffy.jpg", "Angel.jpg", "Spike.jpg", "Willow.jpg",
+            "Achilles.png", "Bloody Mary.png", "Sun Wukong.png", "Yennenga.png",
+            "Luke Cage.jpg", "Ghost Rider.jpg", "Moon Knight.jpg",
+            "Daredevil.jpg", "Bullseye.jpg", "Elektra.jpg",
+            "Robin Hood.jpg", "Bigfoot.jpg",
+            "Muldoon.jpg", "Raptors.jpg",
+            "Little Red.jpg", "Beowulf.jpg",
+            "Dr. Sattler.png", "T-Rex.png"
+        ];
+
+        window.onload = function() {
+            let imageGrid = document.getElementById('imageGrid');
+            images.forEach(function(image) {
+                let img = document.createElement('img');
+                img.src = 'path-to-images/' + image;
+                imageGrid.appendChild(img);
+            });
+        }
+
+        function randomMatchup() {
+            let randomMatchupDiv = document.getElementById('randomMatchup');
+            randomMatchupDiv.innerHTML = '';
+
+            let randomIndices = [];
+            while(randomIndices.length < 2){
+                let r = Math.floor(Math.random() * images.length);
+                if(randomIndices.indexOf(r) === -1) randomIndices.push(r);
+            }
+
+            randomIndices.forEach(function(index) {
+                let img = document.createElement('img');
+                img.src = 'unmatched/' + images[index];
+                img.style.height = '200px';
+                img.style.width = '200px';
+                img.style.margin = '10px';
+                randomMatchupDiv.appendChild(img);
+            });
+        }
+    </script>
+</body>
+</html>

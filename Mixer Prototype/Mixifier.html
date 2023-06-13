@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matchup Mixifier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-bottom: 2em;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            width: 50%;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+        }
+        button {
+            padding: 15px 30px;
+            margin: 5px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .dice-roller {
+            border-radius: 50%/10%;
+        }
+        .upload-content {
+            border-radius: 50%;
+        }
+        @media screen and (max-width: 600px) {
+            table, .button-container {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Matchup Mixifier!</h1>
+        <table>
+            <tr>
+                <th>Video Games</th>
+                <th>Board Games</th>
+            </tr>
+            <tr>
+                <td><a href="GamePage/smash.html"><img src="Game Table/smash.png"></a></td>
+                <td><a href="Unmatched/Randomizer.html"><img src="Game Table/unmatched.webp"></a></td>
+            </tr>
+            <tr>
+                <td><a href="GamePage/mario kart.html"><img src="Game Table/mario kart.webp"></a></td>
+                <td><a href="BoardGamePage/root.html"><img src="Game Table/root.avif"></a></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <div class="button-container">
+            <button class="dice-roller">Dice Roller</button>
+            <button class="upload-content">Upload Custom Content</button>
+        </div>
+    </div>
+</body>
+</html>
